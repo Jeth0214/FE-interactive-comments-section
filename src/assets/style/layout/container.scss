@@ -1,0 +1,7 @@
+@use '../utilities/' as *;
+
+.container {
+    max-width: rem(730);
+    padding-inline: rem(24);
+    margin: rem(64) auto;
+}

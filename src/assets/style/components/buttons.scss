@@ -1,0 +1,21 @@
+@use '../utilities/' as *;
+
+.btn__votes {
+    padding: rem(12) rem(15);
+    border-radius: 10px;
+    .upvote , .downvote {
+        &:hover {
+            color: hsl(var(--clr-moderate-blue));
+        }
+    }
+}
+
+.btn {
+    font-weight: 500;
+    color: hsl(var(--clr-white));
+    padding: rem(12) rem(26);
+    border-radius: 8px;
+    &:hover {
+        background-color: hsl(var(--clr-light-grayish-blue));
+    }
+}
