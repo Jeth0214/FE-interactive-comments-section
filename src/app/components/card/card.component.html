@@ -1,0 +1,26 @@
+<div class="card bg-white d-flex">
+    <div class="card__vote">
+        <app-vote-button [score]="comment.score"></app-vote-button>
+    </div>
+    
+    <div class="card__content">
+        <div class="card__header d-flex"> 
+            <div class="card__image">
+                <img [src]="comment.user.image.png" alt="comment.user.username">
+            </div>
+            <p class="card__name text-dark-blue fw-500">
+                {{ comment.user.username }}
+            </p>
+            <p>{{ comment.createdAt }}</p>
+        </div>
+
+        <a role="button" class="btn-reply text-blue fw-500">
+            <i class="fa-solid fa-reply"></i>
+            <span>Reply</span>
+        </a>
+        
+        <p class="card__text">
+            {{ comment.content }}
+        </p>
+    </div>
+</div>

@@ -1,11 +1,22 @@
 @use '../utilities/' as *;
 
 .btn__votes {
-    padding: rem(12) rem(15);
+    text-align: center;
+    padding: rem(11) rem(16);
     border-radius: 10px;
+    display: inline-flex;
+    gap: rem(12);
+    @include breakpoint-up('medium') {
+        gap: rem(10);
+        display: flex;
+        flex-direction: column;
+        padding: rem(12) rem(11);
+    }
     .upvote , .downvote {
+        cursor: pointer;
+        font-size: rem(15);
         &:hover {
-            color: hsl(var(--clr-moderate-blue));
+            color: hsl(var(--clr-moderate-blue)) !important;
         }
     }
 }
@@ -15,6 +26,9 @@
     color: hsl(var(--clr-white));
     padding: rem(12) rem(26);
     border-radius: 8px;
+    border: none;
+    outline: none;
+    cursor: pointer;
     &:hover {
         background-color: hsl(var(--clr-light-grayish-blue));
     }
