@@ -3,4 +3,47 @@
 .card {
     border-radius: 8px;
     padding: rem(24);
+    gap: rem(24);
+    position: relative;
+    flex-direction: column;
+    margin-bottom: rem(20);
+    @include breakpoint-up('medium') {
+        flex-direction: row;
+    }
+    .card__content {
+        order: 1;
+        @include breakpoint-up('medium') {
+            order: 2;
+        }
+        .card__header {
+            align-items: center;
+            gap: rem(16);
+            .card__image {
+                width: 32px;
+            }
+        }
+        .card__text {
+            margin-top: 16px;
+            line-height: 24px;
+        }
+    
+        .btn-reply {
+            position: absolute;
+            bottom: 34px;
+            right: 24px;
+            i {
+                margin-right: rem(8);
+            }
+            @include breakpoint-up('medium') {
+                top: 34px;
+                right: 24px;
+            }
+        }
+    }
+    .card__vote {
+        order: 2;
+        @include breakpoint-up('medium') {
+            order: 1;
+        }
+    }
 }
