@@ -18,26 +18,40 @@
         .card__header {
             align-items: center;
             gap: rem(16);
+            margin-bottom: rem(3);
             .card__image {
-                width: 32px;
+               max-width: rem(40);
             }
         }
+        .you {
+            padding: rem(1 ) rem(7);
+            font-size: rem(13);
+            border-radius: 2px;
+        }
         .card__text {
-            margin-top: 16px;
-            line-height: 24px;
+            margin-top: rem(1);
+            line-height: rem(24);
         }
     
-        .btn-reply {
+        .card__buttons {
             position: absolute;
-            bottom: 34px;
-            right: 24px;
+            bottom: rem(34);
+            right: rem(34);
             i {
                 margin-right: rem(8);
             }
-            @include breakpoint-up('medium') {
-                top: 34px;
-                right: 24px;
+            a + a {
+                margin-left: rem(24);
             }
+            @include breakpoint-up('medium') {
+                top: rem(36);
+                right: rem(24);
+                bottom: inherit;
+            }
+        }
+        .update__btns {
+            display: flex;
+            justify-content: flex-end;
         }
     }
     .card__vote {
