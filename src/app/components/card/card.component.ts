@@ -22,7 +22,7 @@ export class CardComponent implements OnInit {
   ngOnInit(): void {
     this.commentToUpdate = this.comment.content;
     this.createdAt = getAgoTime(this.comment.createdAt)
-    setInterval( () => { this.createdAt = getAgoTime(this.comment.createdAt)}, 6000);
+    setInterval( () => { this.createdAt = getAgoTime(this.comment.createdAt)}, 60000);
 
   }
 
