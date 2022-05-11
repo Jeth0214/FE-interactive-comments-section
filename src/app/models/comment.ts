@@ -4,7 +4,16 @@ export interface Comment {
     id: number,
     content: string,
     createdAt: string,
-    score: number,
+    vote: {
+        score : number,
+        voters?: [
+            {
+                id?: string,
+                up?: boolean,
+                down?: boolean
+            }
+        ]
+    },
     user: User,
     replies: Comment[]
 

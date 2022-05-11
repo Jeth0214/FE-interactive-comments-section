@@ -1,6 +1,6 @@
 <div class="card bg-white d-flex">
     <div class="card__vote">
-        <app-vote-button [score]="comment.score"></app-vote-button>
+        <app-vote-button [vote]="comment.vote" (voted)="onVote($event)" [currentUser]="currentUser"></app-vote-button>
     </div>
     
     <div class="card__content">

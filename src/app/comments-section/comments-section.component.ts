@@ -49,5 +49,9 @@ export class CommentsSectionComponent implements OnInit {
   onCancel() {
     this.modalService.close('modal-1');
   }
+
+  updateScore(comment) {
+    this.updateComment(comment);
+  }
    
 }

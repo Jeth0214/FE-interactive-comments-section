@@ -1,6 +1,11 @@
 <ng-container *ngIf="comments">
     <div class="comments" *ngFor="let comment of comments">
-        <app-card [comment]="comment" [currentUser]="currentUser" (update)="updateComment($event)" (delete)="onDeleteComment($event)"></app-card>
+        <app-card [comment]="comment" 
+                  [currentUser]="currentUser" 
+                  (update)="updateComment($event)" 
+                  (delete)="onDeleteComment($event)"
+                  (vote)="updateScore($event)">
+        </app-card>
     </div>
     <app-form [currentUser]="currentUser" (add)="addComment($event)"></app-form>
 </ng-container>

@@ -25,7 +25,9 @@ export class FormComponent implements OnInit {
       id: 0,
       content: this.comment.trim(),
       createdAt: new Date().toString(),
-      score: 0,
+      vote: {
+        score: 0,
+      },
       replies: [],
       user: this.currentUser
     }
