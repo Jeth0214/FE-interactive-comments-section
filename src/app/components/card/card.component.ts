@@ -13,16 +13,18 @@ export class CardComponent implements OnInit {
   @Input() currentUser: User;
   @Output() update =  new EventEmitter< Comment > ();
   @Output() delete =  new EventEmitter< number > ();
+  @Output() vote =  new EventEmitter< Comment > ();
 
   commentToUpdate: string = ""; 
   onEditMode = false;
   createdAt: string
+
   constructor() { }
 
   ngOnInit(): void {
     this.commentToUpdate = this.comment.content;
     this.createdAt = getAgoTime(this.comment.createdAt)
-    setInterval( () => { this.createdAt = getAgoTime(this.comment.createdAt)}, 6000);
+    setInterval( () => { this.createdAt = getAgoTime(this.comment.createdAt)}, 60000);
 
   }
 
@@ -51,6 +53,12 @@ export class CardComponent implements OnInit {
     comment.content = this.commentToUpdate.trim();
     this.update.emit(comment);
     this.onEditMode = false;
+  }
+
+  onVote(vote) {
+    console.log(vote);
+    this.comment.vote = vote;
+    this.vote.emit(this.comment);
   }
 
    ngOnDestroy() {
