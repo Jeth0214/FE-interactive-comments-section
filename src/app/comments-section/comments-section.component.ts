@@ -3,6 +3,7 @@ import { CommentsService } from '../comments.service';
 import { Comment } from '../models/comment';
 import { User } from '../models/user';
 import { ModalService } from '../components/modal/modal.service';
+import { Reply } from '../models/reply';
 
 @Component({
   selector: 'app-comments-section',
@@ -13,7 +14,8 @@ export class CommentsSectionComponent implements OnInit {
 
   comments: Comment[];
   currentUser: User;
-  idToDelete: number;
+  commentToDelete: Comment | Reply;
+  
 
   constructor( private commentService: CommentsService, private modalService: ModalService ) { }
 
@@ -27,7 +29,6 @@ export class CommentsSectionComponent implements OnInit {
   }
 
   addComment(newComment: Comment) {
-    newComment.id = Date.now();
    this.comments = this.commentService.addComment(newComment);
   }
   
@@ -35,14 +36,14 @@ export class CommentsSectionComponent implements OnInit {
      this.commentService.updateComment(comment)
   }
 
-  onDeleteComment(id: number) {
-    this.idToDelete = id;
+  onDeleteComment(comment) {
+    this.commentToDelete = comment;
     this.modalService.open('modal-1');
   }
 
   deleteComment() {
-    console.log(this.idToDelete);
-    this.comments = this.commentService.deleteComment(this.idToDelete);
+    console.log(this.commentToDelete);
+    this.comments = this.commentService.deleteComment(this.commentToDelete);
     this.onCancel();
   }
 
@@ -53,5 +54,7 @@ export class CommentsSectionComponent implements OnInit {
   updateScore(comment) {
     this.updateComment(comment);
   }
+
+ 
    
 }
