@@ -1,12 +1,25 @@
 <ng-container *ngIf="comments">
+    <!-- show all comments -->
     <div class="comments" *ngFor="let comment of comments">
         <app-card [comment]="comment" 
                   [currentUser]="currentUser" 
                   (update)="updateComment($event)" 
                   (delete)="onDeleteComment($event)"
-                  (vote)="updateScore($event)">
+                  (vote)="updateScore($event)"
+                  >
         </app-card>
+    
+        <!-- All REplies -->
+        <div class="replies" *ngIf="comment.replies.length > 0">
+            <div *ngFor="let reply of comment.replies">
+                <app-card [comment]="reply" [currentUser]="currentUser" (update)="updateComment($event)"
+                    (delete)="onDeleteComment($event)" (vote)="updateScore($event)">
+                </app-card>
+            </div>
+        </div>
     </div>
+
+    <!-- main comment form -->
     <app-form [currentUser]="currentUser" (add)="addComment($event)"></app-form>
 </ng-container>
 
