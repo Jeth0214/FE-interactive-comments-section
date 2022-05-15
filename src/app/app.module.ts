@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { ComponentsModule } from './components/components.module';
 import { CommentsSectionComponent } from './comments-section/comments-section.component';
 import { CommentsService } from './comments.service';
+import { TimeagoModule } from 'ngx-timeago';
 
 
 
@@ -14,11 +15,12 @@ import { CommentsService } from './comments.service';
   ],
   imports: [
     BrowserModule,
-    ComponentsModule
+    ComponentsModule,
+    TimeagoModule.forRoot()
   ],
   providers: [
-    CommentsService, 
-    
+    CommentsService,
+
   ],
   bootstrap: [AppComponent]
 })

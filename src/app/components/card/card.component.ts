@@ -12,11 +12,11 @@ import { Reply } from 'src/app/models/reply';
 export class CardComponent implements OnInit {
   @Input() comment: Comment;
   @Input() currentUser: User;
-  @Output() update =  new EventEmitter< Comment > ();
-  @Output() delete =  new EventEmitter< Comment | Reply > ();
-  @Output() vote =  new EventEmitter< Comment > ();
+  @Output() update = new EventEmitter<Comment>();
+  @Output() delete = new EventEmitter<Comment | Reply>();
+  @Output() vote = new EventEmitter<Comment>();
 
-  commentToUpdate: string = ""; 
+  commentToUpdate: string = "";
   onEditMode = false;
   createdAt: string;
   showForm = false;
@@ -25,15 +25,12 @@ export class CardComponent implements OnInit {
 
   ngOnInit(): void {
     this.commentToUpdate = this.comment.content;
-    this.createdAt = getAgoTime(this.comment.createdAt)
-    setInterval( () => { this.createdAt = getAgoTime(this.comment.createdAt)}, 60000);
-
   }
 
 
   onDelete(comment: Reply | Comment) {
     //console.log(comment);
-   this.delete.emit(comment);
+    this.delete.emit(comment);
   }
 
   onEdit() {
@@ -46,9 +43,9 @@ export class CardComponent implements OnInit {
   }
 
 
-  updateComment(comment :Comment) {
+  updateComment(comment: Comment) {
 
-    if(this.commentToUpdate == "" || this.commentToUpdate == undefined ) {
+    if (this.commentToUpdate == "" || this.commentToUpdate == undefined) {
       return;
     }
 
@@ -69,7 +66,7 @@ export class CardComponent implements OnInit {
     //this.reply.emit(username);
   }
 
-   ngOnDestroy() {
+  ngOnDestroy() {
     clearInterval();
   }
 

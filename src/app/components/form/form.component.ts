@@ -39,7 +39,7 @@ export class FormComponent implements OnInit, AfterViewInit {
     }
     const prevalue = {
       id: Date.now() as number,
-      content: this.comment.trim().replace(`@${this.replyingTo.user.username} `, ''),
+      content: this.comment.trim(),
       createdAt: new Date().toString(),
       user: this.currentUser,
       vote: {
@@ -49,6 +49,7 @@ export class FormComponent implements OnInit, AfterViewInit {
     }
     if (this.replyingTo) {
       let comment_id = this.replyingTo.comment_id ? this.replyingTo.comment_id : this.replyingTo.id;
+      prevalue.content = this.comment.replace(`@${this.replyingTo.user.username} `, '')
       let reply: Reply = { ...prevalue, replyingTo: this.replyingTo.user.username, comment_id: comment_id }
       this.commentService.addComment(reply, comment_id);
       this.onReplyMode.emit(reply);
