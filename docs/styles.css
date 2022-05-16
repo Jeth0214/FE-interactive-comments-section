@@ -1,0 +1,386 @@
+:root {
+  /* COLORS */
+  --clr-moderate-blue: 238, 40%, 52%;
+  --clr-soft-red: 358, 79%, 66%;
+  --clr-light-grayish-blue: 239, 57%, 85%;
+  --clr-pale-red: 357, 100%, 86%;
+  --clr-white: 0 0% 100%;
+  --clr-grayish-blue: 211, 10%, 45%;
+  --clr-dark-blue: 212, 24%, 26%;
+  --clr-light-gray: 223, 19%, 93%;
+  --clr-very-light-gray: 228, 33%, 97%;
+  /*  Typography */
+  --ff-rubik: "Rubik", sans-serif;
+  --fs-900: 5rem;
+  --fs-800: 2.5rem;
+  --fs-600: 1.75rem;
+  --fs-400: 0.875rem;
+  --fs-300: 0.75rem;
+  --fs-200: 0.6875rem ;
+}
+
+*,
+*::before,
+*:after {
+  box-sizing: border-box;
+}
+
+/* reset margins  */
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+picture {
+  margin: 0;
+}
+
+/*  set up the body  */
+
+body {
+  min-height: 100vh;
+  font-size: 16px;
+  font-family: var(--ff-rubik);
+  color: hsl(var(--clr-grayish-blue));
+  background-color: hsl(var(--clr-very-light-gray));
+}
+
+/* images */
+
+img,
+picture {
+  max-width: 100%;
+}
+
+/* list  */
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* links */
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+/* button */
+
+button {
+  font: inherit;
+}
+
+/* remove animations for people who turned it off*/
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+*::after,
+*::before {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.text-blue {
+  color: hsl(var(--clr-moderate-blue));
+}
+
+.text-dark-blue {
+  color: hsl(var(--clr-dark-blue));
+}
+
+.text-grayish-blue {
+  color: hsl(var(--clr-grayish-blue));
+}
+
+.text-light-grayish-blue {
+  color: hsl(var(--clr-light-grayish-blue));
+}
+
+.text-soft-red {
+  color: hsl(var(--clr-soft-red));
+}
+
+.text-white {
+  color: hsl(var(--clr-white));
+}
+
+.bg-blue {
+  background-color: hsl(var(--clr-moderate-blue));
+}
+
+.bg-dark-blue {
+  background-color: hsl(var(--clr-dark-blue));
+}
+
+.bg-grayish-blue {
+  background-color: hsl(var(--clr-grayish-blue));
+}
+
+.bg-soft-red {
+  background-color: hsl(var(--clr-soft-red));
+}
+
+.bg-white {
+  background-color: hsl(var(--clr-white));
+}
+
+.bg-very-light-gray {
+  background-color: hsl(var(--clr-very-light-gray));
+}
+
+.fw-400 {
+  font-weight: 400;
+}
+
+.fw-500 {
+  font-weight: 500;
+}
+
+.fw-700 {
+  font-weight: 700;
+}
+
+.ff-rubik {
+  font-family: var(--ff-rubik);
+}
+
+.container {
+  width: min(85%, 730px);
+  margin: 4.125rem auto;
+}
+
+.d-flex {
+  display: flex;
+  gap: 1rem;
+}
+
+.d-grid {
+  display: grid;
+  --gap: 1rem;
+}
+
+.btn__votes {
+  text-align: center;
+  padding: 0.6875rem 1rem;
+  border-radius: 10px;
+  display: inline-flex;
+  gap: 0.75rem;
+}
+
+@media (min-width: 48em) {
+  .btn__votes {
+    gap: 0.625rem;
+    display: flex;
+    flex-direction: column;
+    padding: 0.75rem 0.6875rem;
+  }
+}
+
+.btn__votes .upvote, .btn__votes .downvote {
+  cursor: pointer;
+  font-size: 0.9375rem;
+}
+
+.btn__votes .upvote:hover, .btn__votes .downvote:hover {
+  color: hsl(var(--clr-moderate-blue)) !important;
+}
+
+.btn {
+  font-weight: 500;
+  color: hsl(var(--clr-white));
+  padding: 0.75rem 1.875rem;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn:hover {
+  background-color: hsl(var(--clr-light-grayish-blue));
+}
+
+.btn-delete:hover {
+  color: hsl(var(--clr-pale-red));
+}
+
+.btn-delete-fill:hover {
+  background-color: hsl(var(--clr-pale-red));
+}
+
+.btn-secondary-fill:hover {
+  background-color: hsl(var(--clr-dark-blue));
+}
+
+.btn-edit:hover, .btn-reply:hover {
+  color: hsl(var(--clr-light-grayish-blue));
+}
+
+.btn-outline--primary {
+  background-color: hsl(var(--clr-white));
+  color: hsl(var(--clr-moderate-blue));
+  border: 1px solid hsl(var(--clr-moderate-blue));
+  margin-right: 1rem;
+}
+
+.btn-outline--primary:hover {
+  color: hsl(var(--clr-white));
+  background-color: hsl(var(--clr-moderate-blue));
+}
+
+.card {
+  border-radius: 8px;
+  padding: 1.5rem;
+  gap: 1.5rem;
+  position: relative;
+  flex-direction: column;
+  margin-bottom: 1.25rem;
+}
+
+@media (min-width: 48em) {
+  .card {
+    flex-direction: row;
+  }
+}
+
+.card .card__content {
+  order: 1;
+}
+
+@media (min-width: 48em) {
+  .card .card__content {
+    order: 2;
+  }
+}
+
+.card .card__content .card__header {
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.1875rem;
+}
+
+.card .card__content .card__header .card__image {
+  max-width: 2.5rem;
+}
+
+.card .card__content .you {
+  padding: 0.0625rem 0.4375rem;
+  font-size: 0.8125rem;
+  border-radius: 2px;
+}
+
+.card .card__content .card__text {
+  margin-top: 0.0625rem;
+  line-height: 1.5rem;
+}
+
+.card .card__content .card__buttons {
+  position: absolute;
+  bottom: 2.125rem;
+  right: 2.125rem;
+}
+
+.card .card__content .card__buttons i {
+  margin-right: 0.5rem;
+}
+
+.card .card__content .card__buttons a + a {
+  margin-left: 1.5rem;
+}
+
+@media (min-width: 48em) {
+  .card .card__content .card__buttons {
+    top: 2.25rem;
+    right: 1.5rem;
+    bottom: inherit;
+  }
+}
+
+.card .card__content .update__btns {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.card .card__vote {
+  order: 2;
+}
+
+@media (min-width: 48em) {
+  .card .card__vote {
+    order: 1;
+  }
+}
+
+.reply {
+  border-radius: 8px;
+  padding: 1.5rem;
+  gap: 1rem;
+  grid-template-columns: 40px auto 105px;
+  margin-bottom: 1.25rem;
+}
+
+.reply__form {
+  grid-area: 1/1/2/4;
+}
+
+@media (min-width: 48em) {
+  .reply__form {
+    grid-column: 2/3;
+  }
+}
+
+.reply__form .text-area {
+  width: 100%;
+  resize: none;
+  border: 1px solid #E9EBF0;
+  height: 96px;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 1rem;
+}
+
+.reply__form .text-area:focus {
+  outline: none !important;
+  border-color: hsl(var(--clr-moderate-blue));
+}
+
+.reply__form .text-area--comment {
+  margin-bottom: 1rem;
+}
+
+.reply__image {
+  max-width: 2.5rem;
+  grid-column: 1/2;
+}
+
+.reply__btn {
+  grid-column: 3/4;
+  font-size: 1.125rem;
+}
+
+/* You can add global styles to this file, and also import other style files */
+
+/*# sourceMappingURL=styles.css.map*/
