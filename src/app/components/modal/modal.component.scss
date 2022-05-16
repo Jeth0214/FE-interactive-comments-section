@@ -23,6 +23,11 @@ modal {
             background: #fff;
             max-width: 25rem;
             border-radius: 8px;
+
+            .modal-title {
+                font-size: 1.25rem;
+            }
+
             .modal-context {
                 margin: 20px 0;
                 line-height: 24px;

@@ -6,6 +6,7 @@ import { FormComponent } from './form/form.component';
 import { FormsModule } from '@angular/forms';
 import { GetAgoPipe } from '../helper/pipe/get-ago.pipe';
 import { ModalComponent } from './modal/modal.component';
+import { TimeagoModule } from 'ngx-timeago';
 
 
 
@@ -18,8 +19,9 @@ import { ModalComponent } from './modal/modal.component';
     ModalComponent
   ],
   imports: [
-    CommonModule, 
-    FormsModule
+    CommonModule,
+    FormsModule,
+    TimeagoModule
   ],
   exports: [
     CardComponent,

@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { User } from 'src/app/models/user';
+import { Vote } from 'src/app/models/vote';
 
 @Component({
   selector: 'app-vote-button',
@@ -9,26 +10,18 @@ import { User } from 'src/app/models/user';
 export class VoteButtonComponent implements OnInit {
   @Input() vote: any;
   @Input()currentUser : User;
-  @Output() voted = new EventEmitter< number > ();
-  addVote: number;
-  minusVote: number;
-   voter: any;
+  @Output() voted = new EventEmitter< Vote > ();
+  voter: any;
   voterIndex: number;
 
 
   constructor() { }
 
   ngOnInit(): void {
-    this.addVote = this.vote.score + 1;
-    this.minusVote = this.vote.score - 1;
-    
   }
   
 
   voteUp() {
-     if(this.vote.score === this.addVote) {
-      return;
-    }
     this.findVoter(this.currentUser.username);
     if(!this.voter ) {
       this.countVote('up');
@@ -44,15 +37,11 @@ export class VoteButtonComponent implements OnInit {
   }
 
    voteDown() {
-     if(this.vote.score === this.minusVote) {
-       return;
-     }
       this.findVoter(this.currentUser.username);
       if(!this.voter ) {
           this.countVote('down');
         this.vote.voters.push(this.voter)
       } else {
-        // console.log(this.voter)
         if(this.voter.down) {
           return;
         } 
