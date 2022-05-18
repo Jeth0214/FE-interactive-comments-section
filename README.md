@@ -1,27 +1,62 @@
-# InteractiveCommentsSection
+# Frontend Mentor - Interactive comments section solution
 
+
+This is a solution to the [Interactive comments section challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/interactive-comments-section-iG1RugEG9). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+
+## Table of contents
+
+- [Overview](#overview)
+- [The challenge](#the-challenge)
+- [Screenshot](#screenshot)
+- [Links](#links)
+- [My process](#my-process)
+- [Built with](#built-with)
+- [Author](#author)
+
+
+
+## Overview
+
+### The challenge
+
+Users should be able to:
+
+- View the optimal layout for the app depending on their device's screen size
+- See hover states for all interactive elements on the page
+- Create, Read, Update, and Delete comments and replies
+- Upvote and downvote comments
+- **Bonus**: If you're building a purely front-end project, use `localStorage` to save the current state in the browser that persists when the browser is refreshed.
+- **Bonus**: Instead of using the `createdAt` strings from the `data.json` file, try using timestamps and dynamically track the time since the comment or reply was posted.
+
+### Screenshot
+
+![](./src/assets/images/active-states.jpg)
+
+
+### Links
+
+- Solution URL: [solution URL](https://www.frontendmentor.io/solutions/interactive-comment-section-using-angular-4yyCjrVItR)
+- Live Site URL: [live site URL](https://jeth0214.github.io/FE-interactive-comments-section/)
+
+
+## My process
+
+### Built with
+
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- CSS Grid
+- Mobile-first workflow
+- [Angular](https://angular.io/)
+
+# Run project locally
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.19.
-
-## Development server
-
+To run this project locally. Forked this repo. Install node_modules by running `npm install`
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Author
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Website - [Roland Jethro Suyom](https://fe-minimalist-portfolio.netlify.app/)
+- Frontend Mentor - [@Jeth0214](https://www.frontendmentor.io/profile/Jeth0214)
+- Twitter - [@JethroSuyom](https://www.twitter.com/JethroSuyom)
